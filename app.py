@@ -3,9 +3,9 @@ import pandas as pd
 import ast
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
-
-
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 movies = pd.read_csv('tmdb_5000/tmdb_5000_movies.csv')
 
 # Combine genres into a single string for each movie
